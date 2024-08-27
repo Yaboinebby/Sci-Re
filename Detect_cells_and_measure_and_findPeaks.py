@@ -82,7 +82,7 @@ def run(): # this is the function that walks through the directory
 	#UN-COMMENT LINES IF YOU WANT THE TABLES TO CLOSE:
 	IJ.run("Close")
 	IJ.selectWindow("Peaks")
-	IJ.run("Close")
+	#IJ.run("Close")
 	
 	#UN-COMMENT LINES IF YOU WANT ROI MANAGER TO CLOSE:
 	IJ.selectWindow("ROI Manager")
@@ -194,8 +194,8 @@ def findPeaks(imp, peaksTable, srcDir, tarDir):
 	calibration = [cal.pixelWidth] # must be a double array 
 	extremaType = DogDetection.ExtremaType.MINIMA # bright spots on black background
 	sigmaSmaller = 1
-	sigmaLarger = 2
-	minPeakValue = 8
+	sigmaLarger = 1.475
+	minPeakValue = 8.1
 	normalizedMinPeakValue = False
 	
 	detection = DogDetection(ipExtended, ipRAI, calibration, sigmaSmaller, sigmaLarger,
